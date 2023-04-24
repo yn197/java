@@ -1,29 +1,3 @@
-# java
-java常用集合操作
-
-一 引入依赖
-```
-	<!--apache的Collections依赖包-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>4.3</version>
-        </dependency>
-        <!--guava依赖-->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>31.0.1-jre</version>
-        </dependency>
-		<!--hutool-->
-		<dependency>
-			<groupId>cn.hutool</groupId>
-			<artifactId>hutool-all</artifactId>
-			<version>5.8.9</version>
-		</dependency>
-```
-二 代码附上
-````
 package com.yn.listoperate;
 
 import cn.hutool.core.collection.CollUtil;
@@ -164,4 +138,3 @@ class ListOperateApplicationTests {
 		//输出:[Student(username=李四, age=25)]
 	}
 }
-`````
