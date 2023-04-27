@@ -1,0 +1,12 @@
+
+#swagger登录密码
+swagger:
+  production: false
+  basic:
+    enable: true
+    username: root
+    password: ENC(OAhsiNFHwd4zyFbfATqaSw==)
+jasypt:
+  encryptor:
+    password: 123@qq.com
+    algorithm: PBEWITHMD5ANDDES
