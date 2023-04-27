@@ -4,6 +4,7 @@ import com.yn.javacommon.utils.SnowflakeIdWorker;
 import com.yn.javastream.domian.SysUser;
 import com.yn.javastream.domian.UserInfo;
 import com.yn.javastream.mapper.SysUserMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,14 +21,15 @@ import java.util.stream.Stream;
 /**
  * @author yangni
  * @version 1.0
- *
  * @date 2022/8/21 11:12
  */
+@Slf4j
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class TestLamda05 {
     @Resource
     private SysUserMapper sysUserMapper;
+
     @Test
     public void arryToMapStream() {
         List<UserInfo> userInfoList = new ArrayList<>();
@@ -63,6 +65,9 @@ public class TestLamda05 {
         }
     }
 
+    /**
+     * 分组求和
+     */
     @Test
     public void groupingByStream() {
         List<UserInfo> originUserInfoList = new ArrayList<>();
@@ -75,6 +80,21 @@ public class TestLamda05 {
         //分组求和年龄
         Map<String, Integer> prodMap = originUserInfoList.stream().collect(Collectors.groupingBy(UserInfo::getCity, Collectors.summingInt(UserInfo::getAge)));
 
+    }
+
+    /**
+     * 分组求总数
+     */
+    @Test
+    public void groupingByStreamSum() {
+        List<UserInfo> originUserInfoList = new ArrayList<>();
+        originUserInfoList.add(new UserInfo(1L, "捡田螺的小男孩", 18, "深圳"));
+
+        originUserInfoList.add(new UserInfo(3L, "捡瓶子的小男孩", 26, "湛江"));
+        originUserInfoList.add(new UserInfo(2L, "程序员田螺", 27, "深圳"));
+        //不同城市统计人数
+        Map<String, Long> map = originUserInfoList.stream().collect(Collectors.groupingBy(UserInfo::getCity, Collectors.counting()));
+        log.info("城市总数:{}", map);
     }
 
     @Test
@@ -224,38 +244,39 @@ public class TestLamda05 {
 
         System.out.println(collect);
     }
+
     public static void main(String[] args) {
 
         LocalDate startTime = LocalDate.now().minusDays(6);
         LocalDate endTime = LocalDate.now().minusDays(-1);
-        System.out.println("开始时间："+startTime+"结束时间："+endTime);
+        System.out.println("开始时间：" + startTime + "结束时间：" + endTime);
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Calendar calendar = Calendar.getInstance();
 
         //现在日期
         String now = format.format(new Date());
-        System.out.println("现在日期  ："+now);
+        System.out.println("现在日期  ：" + now);
 
         //过去七天
         calendar.setTime(new Date());
-        calendar.add(Calendar.DATE, - 7);//减几就是几天之前
+        calendar.add(Calendar.DATE, -7);//减几就是几天之前
         Date d = calendar.getTime();
         String day = format.format(d);
-        System.out.println("过去七天  ："+day);
+        System.out.println("过去七天  ：" + day);
 
         //过去一月
         calendar.setTime(new Date());
         calendar.add(Calendar.MONTH, -1); //减几就是几个月之前
         Date m = calendar.getTime();
         String mon = format.format(m);
-        System.out.println("过去一个月："+mon);
+        System.out.println("过去一个月：" + mon);
 
         //过去一年
         calendar.setTime(new Date());
         calendar.add(Calendar.YEAR, -1);//减几就是几年之前
         Date y = calendar.getTime();
         String year = format.format(y);
-        System.out.println("过去一年  ："+year);
+        System.out.println("过去一年  ：" + year);
     }
 }
