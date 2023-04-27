@@ -21,6 +21,8 @@
         <module>swagger-demo</module>
         <module>listOperate</module>
         <module>mapTraversal</module>
+        <module>callback</module>
+        <module>java-stream</module>
     </modules>
     <!--版本控制-->
     <properties>
