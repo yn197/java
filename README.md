@@ -1,14 +1,7 @@
-# java学习
-1.List数组或者集合对象，取交，并，差集等等操作
-
-2.JDK1.8常用流操作
-
-3.swagger文档的使用
-
-4.jasypt的加解密
-
-5.Springboot的热部署
-
-6.jdk生成证书
-
-7.
+# 模块功能
+java
+--devtools     --热部署以及热部署插件
+--java-common  --公共包依赖
+--listOperate  --List的交集，并集，差集等操作
+--mapTraversal --Map的遍历方式，后续补充map我喜欢用的其他API
+--swagger-demo --swagger文档，jasypt加密登录用户名密码
