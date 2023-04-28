@@ -1,5 +1,8 @@
 package com.yn.javastream;
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUtil;
 import com.yn.javacommon.utils.SnowflakeIdWorker;
 import com.yn.javastream.domian.SysUser;
 import com.yn.javastream.domian.UserInfo;
@@ -226,8 +229,16 @@ public class TestLamda05 {
         SysUser sysUser = new SysUser();
         sysUser.setUserId(Long.parseLong(SnowflakeIdWorker.getNextId()));
         sysUser.setDeptId(Long.parseLong(SnowflakeIdWorker.getNextId()));
-        sysUser.setUserName("测试数据");
-        sysUser.setNickName("若依测试数据");
+        sysUser.setUserName("测试数据6");
+        sysUser.setNickName("若依测试数据6");
+        //一年后
+        DateTime dateTime = DateUtil.offset(new Date(), DateField.YEAR, 1);
+        Date date = dateTime.toSqlDate();
+        //前一天
+        DateTime offset = DateUtil.offset(date, DateField.DAY_OF_MONTH, -1);
+        sysUser.setCreateTime(new Date());
+//        sysUser.setUpdateTime(date);
+        sysUser.setUpdateTime(offset);
         saveDb(() -> sysUserMapper.insert(sysUser));
     }
 
