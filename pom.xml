@@ -23,6 +23,7 @@
         <module>mapTraversal</module>
         <module>callback</module>
         <module>java-stream</module>
+        <module>ioStream</module>
     </modules>
     <!--版本控制-->
     <properties>
