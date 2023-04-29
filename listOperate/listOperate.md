@@ -31,9 +31,9 @@ package com.yn.listoperate;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.google.common.collect.Sets;
-import org.apache.commons.collections4.CollectionUtils;
+
 import org.assertj.core.util.Lists;
-import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
