@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/ry-cloud?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/**/*.xml
+  global-config:
+    db-config:
+      id-type: none
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
