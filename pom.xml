@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <groupId>com.yn</groupId>
-    <artifactId>javaproject</artifactId>
+    <artifactId>java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>java-parent</name>
