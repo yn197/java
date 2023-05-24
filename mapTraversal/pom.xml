@@ -5,7 +5,7 @@
     <groupId>com.yn</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <parent>
-        <artifactId>javaproject</artifactId>
+        <artifactId>java</artifactId>
         <groupId>com.yn</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
