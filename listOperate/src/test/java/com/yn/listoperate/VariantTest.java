@@ -29,7 +29,7 @@ public class VariantTest {
 
     public  static String aaa() {
         return "Hello, world";
-        VariantTest.bbb();
+//        VariantTest.bbb();
     }
 
 
