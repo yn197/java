@@ -3,6 +3,7 @@ package com.yn.javastream;
 import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
+import com.alibaba.fastjson.JSON;
 import com.yn.javacommon.utils.SnowflakeIdWorker;
 import com.yn.javastream.domian.SysUser;
 import com.yn.javastream.domian.UserInfo;
@@ -289,5 +290,19 @@ public class TestLamda05 {
         Date y = calendar.getTime();
         String year = format.format(y);
         System.out.println("过去一年  ：" + year);
+    }
+
+    /**
+     * 测试默认的Integer和int会不会对数据库查询产生影响
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testDefault() throws Exception {
+        List<SysUser> list = sysUserMapper.selectList(null);
+        log.info("List:{}", JSON.toJSONString(list));
+        SysUser sysUser = new SysUser();
+        List<SysUser> list2 = sysUserMapper.findAll(sysUser);
+        log.info("List:{}", JSON.toJSONString(list2));
     }
 }

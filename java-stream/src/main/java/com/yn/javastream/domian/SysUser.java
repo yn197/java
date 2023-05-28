@@ -22,6 +22,7 @@ public class SysUser implements Serializable {
 
     private String nickName;
 
-    private Date  createTime;
-    private Date  updateTime;
+    private Date createTime;
+    private Date updateTime;
+    private int assignStatus;
 }

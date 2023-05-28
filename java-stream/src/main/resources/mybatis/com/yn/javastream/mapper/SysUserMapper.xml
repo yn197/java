@@ -2,8 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.yn.javastream.mapper.SysUserMapper">
+    <resultMap id="brandMap" type="com.yn.javastream.domian.SysUser">
+        <id column="user_id" property="userId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="assign_status" property="assignStatus"/>
+    </resultMap>
 
+    <select id="findAll" resultType="com.yn.javastream.domian.SysUser">
+        select * from sys_user
+        <where>
 
+            assign_status =#{assignStatus}
+
+        </where>
+    </select>
 
 
 </mapper>
