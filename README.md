@@ -1,5 +1,6 @@
 # 模块功能
-1.模块功能
+## 1.模块功能
+
 ```
 --devtools                          --热部署以及热部署插件
 --easy-excell                       -- easy-excel整合
@@ -13,7 +14,7 @@
 --ioStream                          --IO流操作
 ```
 
-2.ArryList自定义排序
+## 2.ArryList自定义排序
 
 ````java
 1.实体类实现Comparable接口
@@ -53,3 +54,12 @@ Collections.sort(students, Comparator.comparingInt(Student::getAge));
 log.info("学生:{}", JSON.toJSONString(students));
 ````
 
+## 3.构造器 Constructor 是否可被 override
+
+构造器 Constructor 不能被继承，因此不能重写 Override，但可以被重载 Overload
+
+## 4.接口是否可继承接口? 抽象类是否可实现(implements) 接口? 抽象类是否可继承具体类(concrete class)? 抽象类中是否可以有静态的 main 方法？
+
+接口可以继承接口。抽象类可以实现(implements)接口，抽象类是否可继承具体类。抽象类中可以有静态的 main 方法。
+
+只有记住抽象类与普通类的唯一区别就是不能创建实例对象和允许有 abstract 方法。
