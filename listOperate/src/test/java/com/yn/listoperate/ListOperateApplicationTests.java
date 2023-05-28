@@ -70,12 +70,12 @@ public class ListOperateApplicationTests {
     @Test
     public void contextLoads2() {
         ArrayList<Student> newArrayList = Lists.newArrayList();
-        newArrayList.add(new Student().setUsername("张三").setAge(18));
-        newArrayList.add(new Student().setUsername("李四").setAge(25));
+        newArrayList.add(new Student(18,"张三"));
+        newArrayList.add(new Student(25,"李四"));
 
         ArrayList<Student> newArrayList2 = Lists.newArrayList();
-        newArrayList2.add(new Student().setUsername("张三").setAge(18));
-        newArrayList2.add(new Student().setUsername("陈七").setAge(33));
+        newArrayList2.add(new Student(18,"张三"));
+        newArrayList2.add(new Student(33,"陈七"));
 
         //1、并集 union
         System.out.println(CollectionUtils.union(newArrayList, newArrayList2));
@@ -99,11 +99,11 @@ public class ListOperateApplicationTests {
      */
     @Test
     public void contextLoads3() {
-        HashSet<Student> students1 = Sets.newHashSet(new Student().setUsername("张三").setAge(18)
-                , new Student().setUsername("李四").setAge(25));
+        HashSet<Student> students1 = Sets.newHashSet(new Student(18,"张三")
+                , new Student(25,"李四"));
 
-        HashSet<Student> students2 = Sets.newHashSet(new Student().setUsername("张三").setAge(18)
-                , new Student().setUsername("陈七").setAge(33));
+        HashSet<Student> students2 = Sets.newHashSet(new Student(18,"张三")
+                , new Student(33,"陈七"));
 
         //1、并集 union
         System.out.println(Sets.union(students1, students2));
@@ -124,12 +124,12 @@ public class ListOperateApplicationTests {
     @Test
     public void contextLoads4() {
         ArrayList<Student> students1 = Lists.newArrayList();
-        students1.add(new Student().setUsername("张三").setAge(18));
-        students1.add(new Student().setUsername("李四").setAge(25));
+        students1.add(new Student(18,"张三"));
+        students1.add(new Student(25,"李四"));
 
         ArrayList<Student> students2 = Lists.newArrayList();
-        students2.add(new Student().setUsername("张三").setAge(18));
-        students2.add(new Student().setUsername("陈七").setAge(33));
+        students2.add(new Student(18,"张三"));
+        students2.add(new Student(33,"陈七"));
 
         //1、并集 union
         System.out.println(CollUtil.union(students1, students2));
