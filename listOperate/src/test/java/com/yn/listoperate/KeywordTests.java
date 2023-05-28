@@ -1,5 +1,6 @@
 package com.yn.listoperate;
 
+import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,5 +38,23 @@ public class KeywordTests {
             System.out.println(this.a);//20
             System.out.println(a);//30
         }
+    }
+
+    /**
+     * final修饰的关键字
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        final String aaa = "Hello Java";
+        log.info("aaa:{},地址值:{}", aaa,aaa.hashCode());
+        //引用变量无法改变
+        //aaa="Hello c++";
+        final StringBuffer stringBuffer = new StringBuffer("Hello Java");
+        log.info("stringBuffer地址值:{}",stringBuffer.hashCode());
+        //stringBuilder=new StringBuffer("Hello Php");
+        stringBuffer.append(" And Php");
+        log.info("stringBuffer:{},地址值:{}", JSON.toJSONString(stringBuffer),stringBuffer.hashCode());
+
     }
 }
