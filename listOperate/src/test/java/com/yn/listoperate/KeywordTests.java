@@ -1,9 +1,7 @@
 package com.yn.listoperate;
 
 import com.alibaba.fastjson.JSON;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,14 +45,14 @@ public class KeywordTests {
      */
     public static void main(String[] args) {
         final String aaa = "Hello Java";
-        log.info("aaa:{},地址值:{}", aaa,aaa.hashCode());
+        log.info("aaa:{},地址值:{}", aaa, aaa.hashCode());
         //引用变量无法改变
         //aaa="Hello c++";
         final StringBuffer stringBuffer = new StringBuffer("Hello Java");
-        log.info("stringBuffer地址值:{}",stringBuffer.hashCode());
+        log.info("stringBuffer地址值:{}", stringBuffer.hashCode());
         //stringBuilder=new StringBuffer("Hello Php");
         stringBuffer.append(" And Php");
-        log.info("stringBuffer:{},地址值:{}", JSON.toJSONString(stringBuffer),stringBuffer.hashCode());
+        log.info("stringBuffer:{},地址值:{}", JSON.toJSONString(stringBuffer), stringBuffer.hashCode());
 
     }
 }
