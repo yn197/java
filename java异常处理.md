@@ -26,7 +26,7 @@ public void printStackTrace();
 
 异常类有两个主要的子类：IOException 类和 RuntimeException 类。
 
-![](/img/异常图.png)
+![异常图.png](image/异常图.png)
 
 ## 2 异常常见的处理方式
 
